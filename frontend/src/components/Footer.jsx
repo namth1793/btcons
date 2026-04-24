@@ -54,7 +54,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
-              <img src="/logo.png" alt="BTCONS" className="h-10 w-auto object-contain" />
+              <img src="/logo.jpg" alt="BTCONS" className="h-10 w-auto object-contain bg-white rounded px-1" />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               A leading global builder and real estate developer — innovative, solutions-driven, and community-focused for over 150 years.
