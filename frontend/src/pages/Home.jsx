@@ -1,73 +1,45 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { API } from '../config.js';
 
-/* ─── Hero split panel ─── */
+/* ─── Hero full-width ─── */
 function HeroSection() {
-  const [hovered, setHovered] = useState(null);
   return (
-    <section className="h-screen flex flex-col md:flex-row">
-      {/* Building panel */}
-      <div
-        className={`relative flex-1 overflow-hidden cursor-pointer transition-all duration-700 ${hovered === 'dev' ? 'flex-[0.35]' : hovered === 'build' ? 'flex-[0.65]' : 'flex-1'}`}
-        onMouseEnter={() => setHovered('build')}
-        onMouseLeave={() => setHovered(null)}
-      >
-        <img
-          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80"
-          alt="Building"
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 scale-105"
-          style={{ transform: hovered === 'build' ? 'scale(1.08)' : 'scale(1.05)' }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-dark/20" />
-        <div className="absolute inset-0 flex flex-col justify-end p-10 md:p-16">
-          <p className="section-label text-white/80">BTCONS Building</p>
-          <h2 className="font-heading font-bold text-4xl md:text-6xl text-white mb-4 leading-tight">Building</h2>
-          <p className="text-white/80 text-base md:text-lg mb-8 max-w-md leading-relaxed">
-            Construction management, design-build, and integrated project delivery across every major market sector.
-          </p>
-          <Link to="/building" className="btn-outline self-start">Explore Building</Link>
-        </div>
-      </div>
+    <section className="relative h-screen min-h-[560px] flex items-center justify-center overflow-hidden">
+      {/* Background image */}
+      <img
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
+        alt="BTCONS construction"
+        className="absolute inset-0 w-full h-full object-cover scale-105"
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-dark/55" />
 
-      {/* Divider */}
-      <div className="hidden md:block w-1 bg-primary z-10 relative">
-        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-center">
-          <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg">
-            <span className="text-white font-heading font-bold text-xs">+</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Development panel */}
-      <div
-        className={`relative flex-1 overflow-hidden cursor-pointer transition-all duration-700 ${hovered === 'build' ? 'flex-[0.35]' : hovered === 'dev' ? 'flex-[0.65]' : 'flex-1'}`}
-        onMouseEnter={() => setHovered('dev')}
-        onMouseLeave={() => setHovered(null)}
-      >
-        <img
-          src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80"
-          alt="Development"
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
-          style={{ transform: hovered === 'dev' ? 'scale(1.08)' : 'scale(1.05)' }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/50 to-charcoal/20" />
-        <div className="absolute inset-0 flex flex-col justify-end p-10 md:p-16">
-          <p className="section-label text-primary">BTCONS Development</p>
-          <h2 className="font-heading font-bold text-4xl md:text-6xl text-white mb-4 leading-tight">Development</h2>
-          <p className="text-white/80 text-base md:text-lg mb-8 max-w-md leading-relaxed">
-            Real estate development, acquisition, finance, and property management — creating communities that last.
-          </p>
-          <Link to="/development" className="btn-outline self-start">Explore Development</Link>
-        </div>
-      </div>
-
-      {/* Scroll cue */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 z-10">
-        <span className="text-white/50 text-xs uppercase tracking-widest font-heading">Scroll</span>
-        <div className="w-0.5 h-10 bg-white/30 relative overflow-hidden rounded">
-          <div className="absolute top-0 left-0 w-full bg-primary animate-bounce h-1/2 rounded"></div>
+      {/* Content */}
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <h1 className="font-heading font-bold text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-10 drop-shadow-lg">
+          BTCONS is a leading global builder and real estate developer
+        </h1>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            to="/building"
+            className="flex items-center gap-3 bg-primary hover:bg-primary-dark text-white font-heading font-bold text-sm uppercase tracking-widest px-8 py-4 transition-colors duration-200 group"
+          >
+            Building Company
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+          <Link
+            to="/development"
+            className="flex items-center gap-3 bg-primary hover:bg-primary-dark text-white font-heading font-bold text-sm uppercase tracking-widest px-8 py-4 transition-colors duration-200 group"
+          >
+            Development Company
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
