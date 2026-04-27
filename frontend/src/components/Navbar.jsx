@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const buildingDropdown = [
@@ -26,31 +26,31 @@ export default function Navbar() {
 
   useEffect(() => { setMobileOpen(false); setMobileExpanded(''); }, [location]);
 
-  const navBg = (!isHome || scrolled || mobileOpen) ? 'bg-dark shadow-lg' : 'bg-transparent';
+  const navBg = (!isHome || scrolled || mobileOpen) ? 'bg-white shadow-lg' : 'bg-white';
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
       {/* Top utility bar */}
-      <div className="hidden lg:flex items-center justify-end px-8 py-1 border-b border-white/10">
-        <div className="flex items-center gap-6 text-xs text-white/60 font-sans">
-          <Link to="/news" className="hover:text-white transition-colors">News</Link>
-          <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
-          <a href="#" className="hover:text-white transition-colors">Locations</a>
+      <div className="hidden lg:flex items-center justify-end px-8 py-1 border-b border-black/10">
+        <div className="flex items-center gap-6 text-xs text-black/60 font-sans">
+          <Link to="/news" className="transition-colors">News</Link>
+          <Link to="/contact" className="transition-colors">Contact</Link>
+          <a href="#" className="transition-colors">Locations</a>
         </div>
       </div>
 
       {/* Main nav */}
-      <nav className="flex items-center justify-between px-6 lg:px-10 py-4">
+      <nav className="flex items-center justify-between px-6 lg:px-10">
         {/* Logo */}
         <Link to="/" className="flex items-center shrink-0">
-          <img src="/logo.jpg" alt="BTCONS" className="h-10 w-auto object-contain bg-white rounded px-1" />
+          <img src="../../assets/logo.png" alt="BTCONS" className="h-20 w-auto object-contain rounded" />
         </Link>
 
         {/* Desktop links */}
         <ul className="hidden lg:flex items-center gap-1">
           {/* Building */}
           <li className="nav-item relative group">
-            <Link to="/building" className="flex items-center gap-1 px-4 py-2 text-white/90 hover:text-white font-heading font-semibold text-sm uppercase tracking-wider transition-colors">
+            <Link to="/building" className="flex items-center gap-1 px-4 py-2 text-black/90 font-heading font-semibold text-sm uppercase tracking-wider transition-colors">
               Building
               <svg className="w-3 h-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
             </Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
 
           {/* Development */}
           <li className="nav-item relative group">
-            <Link to="/development" className="flex items-center gap-1 px-4 py-2 text-white/90 hover:text-white font-heading font-semibold text-sm uppercase tracking-wider transition-colors">
+            <Link to="/development" className="flex items-center gap-1 px-4 py-2 text-black/90 font-heading font-semibold text-sm uppercase tracking-wider transition-colors">
               Development
               <svg className="w-3 h-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
             </Link>
@@ -96,7 +96,7 @@ export default function Navbar() {
 
           {[{ label: 'Projects', to: '/projects' }, { label: 'About', to: '/about' }, { label: 'Careers', to: '/careers' }].map(link => (
             <li key={link.label}>
-              <Link to={link.to} className="px-4 py-2 text-white/90 hover:text-white font-heading font-semibold text-sm uppercase tracking-wider transition-colors block">
+              <Link to={link.to} className="px-4 py-2 text-black/90 font-heading font-semibold text-sm uppercase tracking-wider transition-colors block">
                 {link.label}
               </Link>
             </li>
@@ -108,16 +108,16 @@ export default function Navbar() {
         </ul>
 
         {/* Mobile hamburger */}
-        <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden text-white p-2" aria-label="Toggle menu">
-          <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
-          <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all ${mobileOpen ? 'opacity-0' : ''}`}></div>
-          <div className={`w-6 h-0.5 bg-white transition-all ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
+        <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden text-black p-2" aria-label="Toggle menu">
+          <div className={`w-6 h-0.5 bg-black mb-1.5 transition-all ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
+          <div className={`w-6 h-0.5 bg-black mb-1.5 transition-all ${mobileOpen ? 'opacity-0' : ''}`}></div>
+          <div className={`w-6 h-0.5 bg-black transition-all ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
         </button>
       </nav>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-dark border-t border-white/10 pb-6">
+        <div className="lg:hidden bg-dark border-t border-black/10 pb-6">
           {[
             { label: 'Building', to: '/building', key: 'building' },
             { label: 'Development', to: '/development', key: 'development' },
