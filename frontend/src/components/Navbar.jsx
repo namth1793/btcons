@@ -43,7 +43,7 @@ export default function Navbar() {
       <nav className="flex items-center justify-between px-6 lg:px-10">
         {/* Logo */}
         <Link to="/" className="flex items-center shrink-0">
-          <img src="../../assets/logo.png" alt="BTCONS" className="h-20 w-auto object-contain rounded" />
+          <img src="/logo.png" alt="BTCONS" className="h-20 w-auto object-contain rounded" />
         </Link>
 
         {/* Desktop links */}
