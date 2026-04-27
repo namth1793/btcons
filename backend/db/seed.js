@@ -239,7 +239,7 @@ const news = [
     title: 'BTCONS Celebrates Topping Out of Elgin Area School District Legacy Project',
     category: 'News',
     excerpt: 'BTCONS Building and Elgin Area School District U46 celebrated the topping out of Legacy Elementary School, a 98,000 SF state-of-the-art K-8 learning community.',
-    image_url: 'https://images.unsplash.com/photo-1535916707197-b8b23cfafecc?w=600&q=80',
+    image_url: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80',
     published_date: '2026-04-18',
     division: 'Building'
   },

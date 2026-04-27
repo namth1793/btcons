@@ -26,24 +26,24 @@ export default function ProjectDetail() {
   if (!project) return <div className="pt-32 text-center text-mid-gray font-heading text-xl min-h-screen">Project not found.</div>;
 
   return (
-    <main className="pt-24">
+    <main className="pt-14 lg:pt-24">
       {/* Hero */}
-      <section className="relative h-[65vh] flex items-end pb-16">
+      <section className="relative h-[50vh] md:h-[65vh] flex items-end pb-10 md:pb-16">
         <img src={project.image_url} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/50 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-3">
             <Link to="/projects" className="text-white/50 hover:text-white text-sm transition-colors">Projects</Link>
             <span className="text-white/30">›</span>
             <span className="text-white/70 text-sm">{project.market}</span>
           </div>
-          <h1 className="font-heading font-bold text-4xl md:text-6xl leading-tight max-w-3xl">{project.title}</h1>
+          <h1 className="font-heading font-bold text-xl sm:text-4xl md:text-6xl leading-tight max-w-3xl">{project.title}</h1>
         </div>
       </section>
 
       {/* Details */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-12">
+      <section className="py-10 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-6 md:gap-12">
           <div className="md:col-span-2">
             <p className="section-label">Project Overview</p>
             <p className="text-dark text-lg leading-relaxed">{project.description}</p>

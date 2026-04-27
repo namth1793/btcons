@@ -26,20 +26,20 @@ export default function Careers() {
   const formatDate = d => new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
   return (
-    <main className="pt-24">
+    <main className="pt-14 lg:pt-24">
       {/* Hero */}
-      <section className="relative h-[55vh] flex items-end pb-16">
+      <section className="relative h-[50vh] md:h-[55vh] flex items-end pb-10 md:pb-16">
         <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80" alt="Careers" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-dark/10" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
           <p className="section-label text-white/70">Join Our Team</p>
-          <h1 className="font-heading font-bold text-5xl md:text-7xl leading-tight">Careers</h1>
+          <h1 className="font-heading font-bold text-3xl sm:text-5xl md:text-7xl leading-tight">Careers</h1>
         </div>
       </section>
 
       {/* Intro */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-16 items-center">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div>
             <p className="section-label">Why BTCONS</p>
             <h2 className="section-title mb-6">Build a Career as Lasting as the Projects We Deliver</h2>
@@ -76,10 +76,10 @@ export default function Careers() {
 
       {/* Diversity Banner */}
       <section className="bg-dark py-16 text-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center gap-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-start gap-8 md:gap-10">
           <div className="flex-1">
             <p className="section-label text-primary">Our Commitment</p>
-            <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">Diversity, Equity & Inclusion</h2>
+            <h2 className="font-heading font-bold text-2xl md:text-4xl mb-4">Diversity, Equity & Inclusion</h2>
             <p className="text-white/70 leading-relaxed">
               BTCONS is committed to fostering a diverse, equitable, and inclusive workplace where every person can thrive. We believe that diverse teams build better buildings and better communities — and we're actively working to reflect that belief in every hire, promotion, and supplier relationship.
             </p>

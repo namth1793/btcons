@@ -29,20 +29,20 @@ const stats = [
 
 export default function Development() {
   return (
-    <main className="pt-24">
+    <main className="pt-14 lg:pt-24">
       {/* Hero */}
-      <section className="relative h-[60vh] flex items-end pb-16">
+      <section className="relative h-[55vh] md:h-[60vh] flex items-end pb-10 md:pb-16">
         <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&q=80" alt="Development" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/10" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
           <p className="section-label text-primary">BTCONS Development</p>
-          <h1 className="font-heading font-bold text-5xl md:text-7xl leading-tight">Development</h1>
+          <h1 className="font-heading font-bold text-3xl sm:text-5xl md:text-7xl leading-tight">Development</h1>
         </div>
       </section>
 
       {/* Intro */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-16 items-center">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="img-zoom rounded overflow-hidden aspect-[4/3]">
             <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Development" className="w-full h-full object-cover" />
           </div>
@@ -112,10 +112,10 @@ export default function Development() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <p className="section-label text-primary">How We Work</p>
           <h2 className="font-heading font-bold text-3xl md:text-4xl mb-12">Our Development Process</h2>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-0">
             {['Site Acquisition', 'Entitlement & Design', 'Financing & Closing', 'Construction', 'Operations & Management'].map((step, i) => (
-              <div key={step} className="relative flex flex-col items-center text-center p-6">
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center font-heading font-bold text-lg text-white mb-4 z-10">{i + 1}</div>
+              <div key={step} className="relative flex flex-col items-center text-center p-5 md:p-6">
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center font-heading font-bold text-lg text-white mb-4 z-10 shrink-0">{i + 1}</div>
                 {i < 4 && <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-primary/30" />}
                 <h3 className="font-heading font-semibold text-sm uppercase tracking-wide text-white/90">{step}</h3>
               </div>

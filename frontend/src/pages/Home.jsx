@@ -18,7 +18,7 @@ function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        <h1 className="font-heading font-bold text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-10 drop-shadow-lg">
+        <h1 className="font-heading font-bold text-2xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-10 drop-shadow-lg">
           BTCONS is a leading global builder and real estate developer
         </h1>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -74,7 +74,24 @@ function StatsSection() {
 /* ─── Featured Projects Carousel ─── */
 function ProjectsCarousel({ projects }) {
   const [idx, setIdx] = useState(0);
-  const visible = 3;
+  const [visible, setVisible] = useState(3);
+
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth < 640) setVisible(1);
+      else if (window.innerWidth < 1024) setVisible(2);
+      else setVisible(3);
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  useEffect(() => { setIdx(0); }, [visible]);
+
+  const gap = 24;
+  const itemOffset = Math.floor((visible - 1) * gap / visible);
+  const stepOffset = gap - itemOffset;
   const max = Math.max(0, projects.length - visible);
   const prev = () => setIdx(i => Math.max(0, i - 1));
   const next = () => setIdx(i => Math.min(max, i + 1));
@@ -102,11 +119,11 @@ function ProjectsCarousel({ projects }) {
 
         <div className="carousel-container">
           <div className="flex gap-6 transition-transform duration-500"
-            style={{ transform: `translateX(calc(-${idx} * (100% / ${visible} + 8px)))` }}>
+            style={{ transform: `translateX(calc(-${idx} * (100% / ${visible} + ${stepOffset}px)))` }}>
             {projects.map(p => (
               <Link key={p.id} to={`/projects/${p.id}`}
                 className="img-zoom shrink-0 group block"
-                style={{ width: `calc(100% / ${visible} - 16px)` }}>
+                style={{ width: `calc(100% / ${visible} - ${itemOffset}px)` }}>
                 <div className="relative overflow-hidden aspect-[4/3]">
                   <img src={p.image_url} alt={p.title} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/40 transition-all duration-300 flex items-end p-0 group-hover:p-5">
@@ -134,7 +151,7 @@ function AboutBanner() {
       <div className="absolute inset-0 bg-dark/75" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
         <p className="section-label text-white/70">Who We Are</p>
-        <h2 className="font-heading font-bold text-4xl md:text-6xl max-w-3xl leading-tight mb-6">
+        <h2 className="font-heading font-bold text-2xl sm:text-4xl md:text-6xl max-w-3xl leading-tight mb-6">
           Innovative. Solutions-Driven. Community-Focused.
         </h2>
         <p className="text-white/70 text-lg max-w-2xl mb-10 leading-relaxed">
@@ -188,7 +205,7 @@ function CareersCTA() {
     <section className="bg-primary py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center text-white">
         <p className="font-heading text-sm uppercase tracking-widest text-white/70 mb-3">Join Our Team</p>
-        <h2 className="font-heading font-bold text-4xl md:text-5xl mb-4">Build Your Career With BTCONS</h2>
+        <h2 className="font-heading font-bold text-2xl sm:text-4xl md:text-5xl mb-4">Build Your Career With BTCONS</h2>
         <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
           We are always looking for talented, driven people who are passionate about construction, development, and making a lasting impact in the communities where we work.
         </p>

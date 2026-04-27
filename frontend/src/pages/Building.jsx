@@ -32,20 +32,20 @@ const markets = [
 
 export default function Building() {
   return (
-    <main className="pt-24">
+    <main className="pt-14 lg:pt-24">
       {/* Hero */}
-      <section className="relative h-[60vh] flex items-end pb-16">
+      <section className="relative h-[55vh] md:h-[60vh] flex items-end pb-10 md:pb-16">
         <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80" alt="Building" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-dark/10" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
           <p className="section-label text-white/70">BTCONS Building</p>
-          <h1 className="font-heading font-bold text-5xl md:text-7xl leading-tight">Building</h1>
+          <h1 className="font-heading font-bold text-3xl sm:text-5xl md:text-7xl leading-tight">Building</h1>
         </div>
       </section>
 
       {/* Intro */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-16 items-center">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div>
             <p className="section-label">Our Approach</p>
             <h2 className="section-title mb-6">A Partner in Every Phase of Construction</h2>

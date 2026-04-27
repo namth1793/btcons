@@ -43,20 +43,20 @@ export default function Contact() {
   };
 
   return (
-    <main className="pt-24">
+    <main className="pt-14 lg:pt-24">
       {/* Hero */}
-      <section className="relative h-64 flex items-end pb-10">
+      <section className="relative h-52 md:h-64 flex items-end pb-8 md:pb-10">
         <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80" alt="Contact" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-dark/70" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
           <p className="section-label text-white/70">Get in Touch</p>
-          <h1 className="font-heading font-bold text-5xl md:text-6xl">Partner With Us</h1>
+          <h1 className="font-heading font-bold text-2xl sm:text-5xl md:text-6xl">Partner With Us</h1>
         </div>
       </section>
 
       {/* Form + Info */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-14">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-8 md:gap-14">
           {/* Form */}
           <div className="md:col-span-2">
             <p className="section-label">Contact Us</p>

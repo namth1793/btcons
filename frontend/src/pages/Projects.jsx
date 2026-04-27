@@ -35,36 +35,35 @@ export default function Projects() {
   };
 
   return (
-    <main className="pt-24">
+    <main className="pt-14 lg:pt-24">
       {/* Hero */}
-      <section className="relative h-72 flex items-end pb-10">
+      <section className="relative h-52 md:h-72 flex items-end pb-8 md:pb-10">
         <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80" alt="Projects" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-dark/70" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
           <p className="section-label text-white/70">Our Work</p>
-          <h1 className="font-heading font-bold text-5xl md:text-6xl">Projects</h1>
+          <h1 className="font-heading font-bold text-2xl sm:text-5xl md:text-6xl">Projects</h1>
         </div>
       </section>
 
       {/* Filters */}
-      <section className="bg-dark py-6 sticky top-[72px] z-40">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="flex flex-wrap items-center gap-4">
-            {/* Division filter */}
-            <div className="flex gap-2">
-              {[['all', 'All Projects'], ['building', 'Building'], ['development', 'Development']].map(([val, label]) => (
-                <button key={val} onClick={() => setFilter('division', val)}
-                  className={`px-4 py-1.5 text-xs font-heading font-semibold uppercase tracking-widest transition-colors ${division === val ? 'bg-primary text-white' : 'text-white/60 hover:text-white'}`}>
-                  {label}
-                </button>
-              ))}
-            </div>
-            <div className="w-px h-5 bg-white/20 hidden md:block" />
-            {/* Market filter */}
-            <div className="flex flex-wrap gap-2">
+      <section className="bg-dark py-4 sticky top-14 lg:top-[72px] z-40">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 space-y-2">
+          {/* Division filter */}
+          <div className="flex gap-2">
+            {[['all', 'All Projects'], ['building', 'Building'], ['development', 'Development']].map(([val, label]) => (
+              <button key={val} onClick={() => setFilter('division', val)}
+                className={`px-4 py-1.5 text-xs font-heading font-semibold uppercase tracking-widest transition-colors ${division === val ? 'bg-primary text-white' : 'text-white/60 hover:text-white'}`}>
+                {label}
+              </button>
+            ))}
+          </div>
+          {/* Market filter - horizontal scroll on mobile */}
+          <div className="overflow-x-auto scrollbar-hide -mx-6 lg:mx-0">
+            <div className="flex gap-2 flex-nowrap px-6 lg:px-0 pb-0.5">
               {markets.map(m => (
                 <button key={m} onClick={() => setFilter('market', m)}
-                  className={`px-3 py-1 text-xs font-sans transition-colors rounded-sm ${market === m ? 'bg-white text-dark' : 'text-white/50 hover:text-white'}`}>
+                  className={`shrink-0 px-3 py-1 text-xs font-sans transition-colors rounded-sm ${market === m ? 'bg-white text-dark' : 'text-white/50 hover:text-white'}`}>
                   {m}
                 </button>
               ))}

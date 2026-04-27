@@ -29,20 +29,20 @@ const leadership = [
 
 export default function About() {
   return (
-    <main className="pt-24">
+    <main className="pt-14 lg:pt-24">
       {/* Hero */}
-      <section className="relative h-[60vh] flex items-end pb-16">
+      <section className="relative h-[55vh] md:h-[60vh] flex items-end pb-10 md:pb-16">
         <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1600&q=80" alt="About BTCONS" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/60 to-dark/10" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
           <p className="section-label text-white/70">Who We Are</p>
-          <h1 className="font-heading font-bold text-5xl md:text-7xl leading-tight">About BTCONS</h1>
+          <h1 className="font-heading font-bold text-3xl sm:text-5xl md:text-7xl leading-tight">About BTCONS</h1>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-16 items-center">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div>
             <p className="section-label">Our Mission</p>
             <h2 className="section-title mb-6">A Family-Owned Legacy of Building</h2>

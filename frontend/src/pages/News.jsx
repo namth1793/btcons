@@ -16,19 +16,19 @@ export default function News() {
   const formatDate = d => new Date(d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
   return (
-    <main className="pt-24">
+    <main className="pt-14 lg:pt-24">
       {/* Hero */}
-      <section className="relative h-64 flex items-end pb-10">
+      <section className="relative h-52 md:h-64 flex items-end pb-8 md:pb-10">
         <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&q=80" alt="News" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-dark/70" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
           <p className="section-label text-white/70">Latest Updates</p>
-          <h1 className="font-heading font-bold text-5xl md:text-6xl">News & Press</h1>
+          <h1 className="font-heading font-bold text-2xl sm:text-5xl md:text-6xl">News & Press</h1>
         </div>
       </section>
 
       {/* Filter */}
-      <section className="bg-dark py-5 sticky top-[72px] z-40">
+      <section className="bg-dark py-4 sticky top-14 lg:top-[72px] z-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex gap-3">
           {divisions.map(d => (
             <button key={d} onClick={() => setFilter(d)}
