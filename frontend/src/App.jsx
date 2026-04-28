@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import FloatingContact from './components/FloatingContact';
 import Home from './pages/Home';
 import Building from './pages/Building';
 import Development from './pages/Development';
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/news" element={<News />} />
       </Routes>
       <Footer />
+      <FloatingContact />
     </BrowserRouter>
   );
 }

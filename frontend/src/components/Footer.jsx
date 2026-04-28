@@ -47,14 +47,14 @@ const socialDev = [
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-white">
+    <footer className="text-white" style={{ backgroundColor: '#244377' }}>
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-6">
-              <img src="/logo.png" alt="BTCONS" className="h-10 w-auto object-contain bg-white rounded px-1" />
+            <Link to="/" className="inline-block mb-2">
+              <img src="/logo_foot.png" alt="BTCONS" className="h-16 w-auto object-contain" />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               A leading global builder and real estate developer — innovative, solutions-driven, and community-focused for over 150 years.
