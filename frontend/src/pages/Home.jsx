@@ -4,37 +4,27 @@ import { Link } from 'react-router-dom';
 import { API } from '../config.js';
 
 /* ─── Hero full-width ─── */
-function HeroSection() {
+function HeroSection({ hero }) {
+  const title    = hero?.title     || 'BTCONS is a leading global builder and real estate developer';
+  const imageUrl = hero?.image_url || 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80';
   return (
     <section className="relative h-screen min-h-[560px] flex items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <img
-        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
-        alt="BTCONS construction"
-        className="absolute inset-0 w-full h-full object-cover scale-105"
-      />
-      {/* Dark overlay */}
+      <img src={imageUrl} alt="BTCONS construction" className="absolute inset-0 w-full h-full object-cover scale-105" />
       <div className="absolute inset-0 bg-dark/55" />
-
-      {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         <h1 className="font-heading font-bold text-2xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-10 drop-shadow-lg">
-          BTCONS is a leading global builder and real estate developer
+          {title}
         </h1>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            to="/building"
-            className="flex items-center gap-3 bg-primary hover:bg-primary-dark text-white font-heading font-bold text-sm uppercase tracking-widest px-8 py-4 transition-colors duration-200 group"
-          >
+          <Link to="/building"
+            className="flex items-center gap-3 bg-primary hover:bg-primary-dark text-white font-heading font-bold text-sm uppercase tracking-widest px-8 py-4 transition-colors duration-200 group">
             Building Company
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
             </svg>
           </Link>
-          <Link
-            to="/development"
-            className="flex items-center gap-3 bg-primary hover:bg-primary-dark text-white font-heading font-bold text-sm uppercase tracking-widest px-8 py-4 transition-colors duration-200 group"
-          >
+          <Link to="/development"
+            className="flex items-center gap-3 bg-primary hover:bg-primary-dark text-white font-heading font-bold text-sm uppercase tracking-widest px-8 py-4 transition-colors duration-200 group">
             Development Company
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -47,18 +37,20 @@ function HeroSection() {
 }
 
 /* ─── Stats ─── */
-function StatsSection() {
-  const stats = [
-    { value: '150+', label: 'Years in Business', sub: 'Founded 1873' },
-    { value: '20+', label: 'Countries Worldwide', sub: 'Global Presence' },
-    { value: '45+', label: 'Office Locations', sub: 'Across the US & Abroad' },
-    { value: '$6B+', label: 'Annual Revenue', sub: 'Top 10 US Contractor' },
-  ];
+const DEFAULT_STATS = [
+  { value: '150+', label: 'Years in Business', sub: 'Founded 1873' },
+  { value: '20+',  label: 'Countries Worldwide', sub: 'Global Presence' },
+  { value: '45+',  label: 'Office Locations',   sub: 'Across the US & Abroad' },
+  { value: '$6B+', label: 'Annual Revenue',     sub: 'Top 10 US Contractor' },
+];
+
+function StatsSection({ stats }) {
+  const data = (Array.isArray(stats) && stats.length) ? stats : DEFAULT_STATS;
   return (
     <section className="bg-light-gray py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map(s => (
+          {data.map(s => (
             <div key={s.label} className="text-center">
               <div className="font-heading font-bold text-5xl text-primary mb-2">{s.value}</div>
               <div className="font-heading font-semibold text-base text-dark uppercase tracking-wide">{s.label}</div>
@@ -245,17 +237,19 @@ function ReportsCTA() {
 /* ─── Home Page ─── */
 export default function Home() {
   const [projects, setProjects] = useState([]);
-  const [news, setNews] = useState([]);
+  const [news,     setNews]     = useState([]);
+  const [content,  setContent]  = useState({});
 
   useEffect(() => {
     fetch(`${API}/projects?featured=1`).then(r => r.json()).then(setProjects).catch(() => {});
     fetch(`${API}/news?limit=6`).then(r => r.json()).then(setNews).catch(() => {});
+    fetch(`${API}/content`).then(r => r.json()).then(setContent).catch(() => {});
   }, []);
 
   return (
     <main>
-      <HeroSection />
-      <StatsSection />
+      <HeroSection   hero={content.hero} />
+      <StatsSection  stats={content.stats} />
       <ProjectsCarousel projects={projects} />
       <AboutBanner />
       <NewsSection news={news} />

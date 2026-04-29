@@ -1,9 +1,9 @@
+require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
-const path = require('path');
+const cors    = require('cors');
 const { initDB } = require('./db/database');
 
-const app = express();
+const app  = express();
 const PORT = process.env.PORT || 5014;
 
 app.use(cors({ origin: '*' }));
@@ -12,9 +12,11 @@ app.use(express.json());
 initDB();
 
 app.use('/api/projects', require('./routes/projects'));
-app.use('/api/news', require('./routes/news'));
-app.use('/api/jobs', require('./routes/jobs'));
+app.use('/api/news',     require('./routes/news'));
+app.use('/api/jobs',     require('./routes/jobs'));
 app.use('/api/contacts', require('./routes/contacts'));
+app.use('/api/content',  require('./routes/content'));
+app.use('/api/admin',    require('./routes/admin'));
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 

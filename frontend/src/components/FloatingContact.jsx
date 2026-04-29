@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
-const PHONE = '0901234567';
-const ZALO_ID = '0901234567';
+const PHONE = '0937225862';
+const ZALO_ID = '0937225862';
 
 const QUICK = [
   { label: 'Dịch vụ', answer: 'BTCONS cung cấp dịch vụ xây dựng tổng thầu (Building) và phát triển bất động sản (Development) cho các dự án quy mô lớn trên toàn quốc.' },
@@ -137,13 +137,13 @@ export default function FloatingContact() {
         className="group relative w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110"
         style={{ backgroundColor: '#0068FF' }}
       >
-        <svg className="w-7 h-7" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <span className="absolute inset-0 rounded-full animate-ping opacity-25" style={{ backgroundColor: '#0068FF', animationDelay: '0s' }} />
+        <svg className="w-7 h-7 relative z-10" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fill="white" fontSize="22" fontWeight="bold" fontFamily="Arial">Z</text>
         </svg>
         <span className="absolute right-14 bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           Chat Zalo
         </span>
-        <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white" />
       </a>
 
       {/* Phone button */}
@@ -152,13 +152,13 @@ export default function FloatingContact() {
         title="Gọi ngay"
         className="group relative w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110 bg-green-500"
       >
-        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-25" style={{ animationDelay: '0.4s' }} />
+        <svg className="w-6 h-6 text-white relative z-10" fill="currentColor" viewBox="0 0 24 24">
           <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
         </svg>
         <span className="absolute right-14 bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           Gọi ngay
         </span>
-        <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-30" />
       </a>
 
       {/* Chatbot button */}
@@ -168,12 +168,15 @@ export default function FloatingContact() {
         className="group relative w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-white transition-transform hover:scale-110"
         style={{ backgroundColor: chatOpen ? '#1a3660' : '#244377' }}
       >
+        {!chatOpen && (
+          <span className="absolute inset-0 rounded-full animate-ping opacity-25" style={{ backgroundColor: '#244377', animationDelay: '0.8s' }} />
+        )}
         {chatOpen ? (
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+          <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         ) : (
-          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 relative z-10" fill="currentColor" viewBox="0 0 24 24">
             <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
           </svg>
         )}

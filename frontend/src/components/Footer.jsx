@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+
 const cols = [
   {
     heading: 'Building',
@@ -56,11 +57,11 @@ export default function Footer() {
             <Link to="/" className="inline-block mb-2">
               <img src="/logo_foot.png" alt="BTCONS" className="h-16 w-auto object-contain" />
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed mb-6">
+            <p className="text-white text-sm leading-relaxed mb-6">
               A leading global builder and real estate developer — innovative, solutions-driven, and community-focused for over 150 years.
             </p>
             <div className="mb-4">
-              <p className="text-white/40 text-xs uppercase tracking-widest mb-2 font-heading">Building</p>
+              <p className="text-white text-xs uppercase tracking-widest mb-2 font-heading">Building</p>
               <div className="flex gap-2">
                 {socialBuilding.map(s => (
                   <a key={s.name} href={s.href} title={s.name}
@@ -71,7 +72,7 @@ export default function Footer() {
               </div>
             </div>
             <div>
-              <p className="text-white/40 text-xs uppercase tracking-widest mb-2 font-heading">Development</p>
+              <p className="text-white text-xs uppercase tracking-widest mb-2 font-heading">Development</p>
               <div className="flex gap-2">
                 {socialDev.map(s => (
                   <a key={s.name} href={s.href} title={s.name}
@@ -86,11 +87,11 @@ export default function Footer() {
           {/* Link columns */}
           {cols.map(col => (
             <div key={col.heading}>
-              <h4 className="font-heading font-bold text-sm uppercase tracking-widest text-primary mb-5">{col.heading}</h4>
+              <h4 className="font-heading font-bold text-sm uppercase tracking-widest text-white mb-5">{col.heading}</h4>
               <ul className="space-y-3">
                 {col.links.map(link => (
                   <li key={link.label}>
-                    <Link to={link.to} className="text-white/60 hover:text-white text-sm transition-colors">{link.label}</Link>
+                    <Link to={link.to} className="text-white hover:text-white/70 text-sm transition-colors">{link.label}</Link>
                   </li>
                 ))}
               </ul>
@@ -102,11 +103,12 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-white/40 text-xs">© {new Date().getFullYear()} BTCONS, Inc. All Rights Reserved.</p>
+          <p className="text-white text-xs">© {new Date().getFullYear()} BTCONS, Inc. All Rights Reserved.</p>
           <div className="flex items-center gap-6">
             {['Privacy Policy', 'Terms of Use', 'Site Map'].map(item => (
-              <a key={item} href="#" className="text-white/40 hover:text-white/70 text-xs transition-colors">{item}</a>
+              <a key={item} href="#" className="text-white hover:text-white/70 text-xs transition-colors">{item}</a>
             ))}
+            <Link to="/admin/login" className="text-white/30 hover:text-white/60 text-xs transition-colors">admin</Link>
           </div>
         </div>
       </div>
