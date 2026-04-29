@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { adminApi } from '../../admin/api.js';
 
 export default function AdminLogin() {
@@ -46,9 +46,10 @@ export default function AdminLogin() {
             {loading ? 'Đang đăng nhập...' : 'Đăng nhập'}
           </button>
         </form>
-        <p className="text-center mt-4 text-xs text-gray-400">
-          <a href="/" className="hover:text-gray-600">← Về trang chủ</a>
-        </p>
+        <Link to="/"
+          className="mt-4 flex items-center justify-center gap-1.5 w-full py-2 text-sm text-gray-500 border border-gray-200 rounded hover:bg-gray-50 transition-colors">
+          ← Về trang chủ
+        </Link>
       </div>
     </div>
   );
