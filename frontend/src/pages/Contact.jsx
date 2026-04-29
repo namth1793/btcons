@@ -46,11 +46,11 @@ export default function Contact() {
     <main className="pt-14 lg:pt-24">
       {/* Hero */}
       <section className="relative h-52 md:h-64 flex items-end pb-8 md:pb-10">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80" alt="Contact" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80" alt="Liên hệ" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-dark/70" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
-          <p className="section-label text-white/70">Get in Touch</p>
-          <h1 className="font-heading font-bold text-2xl sm:text-5xl md:text-6xl">Partner With Us</h1>
+          <p className="section-label text-white/70">Kết nối với chúng tôi</p>
+          <h1 className="font-heading font-bold text-2xl sm:text-5xl md:text-6xl">Hợp tác với chúng tôi</h1>
         </div>
       </section>
 
@@ -59,9 +59,9 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-8 md:gap-14">
           {/* Form */}
           <div className="md:col-span-2">
-            <p className="section-label">Contact Us</p>
-            <h2 className="section-title mb-2">Tell Us About Your Project</h2>
-            <p className="text-mid-gray mb-8">Whether you have a construction project in mind or a real estate development opportunity, our team would love to hear from you.</p>
+            <p className="section-label">Liên hệ</p>
+            <h2 className="section-title mb-2">Hãy kể cho chúng tôi về dự án của bạn</h2>
+            <p className="text-mid-gray mb-8">Dù bạn có dự án xây dựng hay cơ hội phát triển bất động sản, đội ngũ chúng tôi luôn sẵn sàng lắng nghe.</p>
 
             {status && (
               <div className={`mb-6 p-4 border-l-4 text-sm font-sans ${status.type === 'success' ? 'border-green-500 bg-green-50 text-green-800' : 'border-red-500 bg-red-50 text-red-800'}`}>
@@ -72,45 +72,45 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-heading font-bold uppercase tracking-widest text-dark mb-2">Full Name *</label>
+                  <label className="block text-xs font-heading font-bold uppercase tracking-widest text-dark mb-2">Họ và tên *</label>
                   <input name="name" value={form.name} onChange={handleChange} required
-                    className="w-full border border-gray-300 px-4 py-3 text-sm font-sans focus:outline-none focus:border-primary transition-colors" placeholder="Jane Smith" />
+                    className="w-full border border-gray-300 px-4 py-3 text-sm font-sans focus:outline-none focus:border-primary transition-colors" placeholder="Nguyễn Văn A" />
                 </div>
                 <div>
-                  <label className="block text-xs font-heading font-bold uppercase tracking-widest text-dark mb-2">Email Address *</label>
+                  <label className="block text-xs font-heading font-bold uppercase tracking-widest text-dark mb-2">Email *</label>
                   <input name="email" type="email" value={form.email} onChange={handleChange} required
-                    className="w-full border border-gray-300 px-4 py-3 text-sm font-sans focus:outline-none focus:border-primary transition-colors" placeholder="jane@company.com" />
+                    className="w-full border border-gray-300 px-4 py-3 text-sm font-sans focus:outline-none focus:border-primary transition-colors" placeholder="ten@congty.com" />
                 </div>
                 <div>
-                  <label className="block text-xs font-heading font-bold uppercase tracking-widest text-dark mb-2">Company / Organization</label>
+                  <label className="block text-xs font-heading font-bold uppercase tracking-widest text-dark mb-2">Công ty / Tổ chức</label>
                   <input name="company" value={form.company} onChange={handleChange}
-                    className="w-full border border-gray-300 px-4 py-3 text-sm font-sans focus:outline-none focus:border-primary transition-colors" placeholder="Acme Corp" />
+                    className="w-full border border-gray-300 px-4 py-3 text-sm font-sans focus:outline-none focus:border-primary transition-colors" placeholder="Tên công ty" />
                 </div>
                 <div>
-                  <label className="block text-xs font-heading font-bold uppercase tracking-widest text-dark mb-2">Phone Number</label>
+                  <label className="block text-xs font-heading font-bold uppercase tracking-widest text-dark mb-2">Số điện thoại</label>
                   <input name="phone" value={form.phone} onChange={handleChange}
-                    className="w-full border border-gray-300 px-4 py-3 text-sm font-sans focus:outline-none focus:border-primary transition-colors" placeholder="+1 (555) 000-0000" />
+                    className="w-full border border-gray-300 px-4 py-3 text-sm font-sans focus:outline-none focus:border-primary transition-colors" placeholder="0901 234 567" />
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-heading font-bold uppercase tracking-widest text-dark mb-2">Area of Interest</label>
+                <label className="block text-xs font-heading font-bold uppercase tracking-widest text-dark mb-2">Lĩnh vực quan tâm</label>
                 <select name="division" value={form.division} onChange={handleChange}
                   className="w-full border border-gray-300 px-4 py-3 text-sm font-sans focus:outline-none focus:border-primary transition-colors bg-white">
-                  <option value="">Select one...</option>
-                  <option value="building">BTCONS Building</option>
-                  <option value="development">BTCONS Development</option>
-                  <option value="both">Both / General Inquiry</option>
+                  <option value="">Chọn một...</option>
+                  <option value="building">BTCONS Xây dựng</option>
+                  <option value="development">BTCONS Phát triển</option>
+                  <option value="both">Cả hai / Hỏi chung</option>
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-heading font-bold uppercase tracking-widest text-dark mb-2">Message *</label>
+                <label className="block text-xs font-heading font-bold uppercase tracking-widest text-dark mb-2">Nội dung *</label>
                 <textarea name="message" value={form.message} onChange={handleChange} required rows={5}
                   className="w-full border border-gray-300 px-4 py-3 text-sm font-sans focus:outline-none focus:border-primary transition-colors resize-none"
-                  placeholder="Tell us about your project, timeline, and how we can help..." />
+                  placeholder="Mô tả dự án, tiến độ và cách chúng tôi có thể hỗ trợ bạn..." />
               </div>
               <button type="submit" disabled={sending}
                 className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed">
-                {sending ? 'Sending...' : 'Send Message'}
+                {sending ? 'Đang gửi...' : 'Gửi tin nhắn'}
               </button>
             </form>
           </div>
@@ -118,19 +118,19 @@ export default function Contact() {
           {/* Side info */}
           <div className="space-y-8">
             <div className="bg-light-gray p-7">
-              <h3 className="font-heading font-bold text-lg text-dark mb-4">Headquarters</h3>
+              <h3 className="font-heading font-bold text-lg text-dark mb-4">Trụ sở chính</h3>
               <p className="text-mid-gray text-sm leading-relaxed mb-2">7 Jackson Walkway<br />Providence, RI 02903</p>
               <p className="text-mid-gray text-sm">+1 (401) 456-5800</p>
             </div>
             <div className="bg-primary p-7 text-white">
-              <h3 className="font-heading font-bold text-lg mb-3">Media Inquiries</h3>
-              <p className="text-white/80 text-sm leading-relaxed mb-3">For press and media-related questions, please contact our communications team.</p>
+              <h3 className="font-heading font-bold text-lg mb-3">Liên hệ Báo chí</h3>
+              <p className="text-white/80 text-sm leading-relaxed mb-3">Với các câu hỏi liên quan đến báo chí và truyền thông, vui lòng liên hệ bộ phận truyền thông của chúng tôi.</p>
               <a href="mailto:media@btcons.vn" className="text-white font-heading font-semibold text-sm hover:underline">media@btcons.vn</a>
             </div>
             <div>
-              <h3 className="font-heading font-bold text-lg text-dark mb-4">Looking for Careers?</h3>
-              <p className="text-mid-gray text-sm leading-relaxed mb-4">Explore open positions across our Building and Development divisions.</p>
-              <Link to="/careers" className="btn-outline-dark text-xs py-2.5 inline-block">View Open Positions</Link>
+              <h3 className="font-heading font-bold text-lg text-dark mb-4">Tìm kiếm việc làm?</h3>
+              <p className="text-mid-gray text-sm leading-relaxed mb-4">Khám phá các vị trí đang tuyển dụng tại mảng Xây dựng và Phát triển của chúng tôi.</p>
+              <Link to="/careers" className="btn-outline-dark text-xs py-2.5 inline-block">Xem vị trí tuyển dụng</Link>
             </div>
           </div>
         </div>
@@ -139,8 +139,8 @@ export default function Contact() {
       {/* Offices */}
       <section className="py-20 bg-light-gray">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <p className="section-label">Where We Are</p>
-          <h2 className="section-title mb-10">Our Offices</h2>
+          <p className="section-label">Chúng tôi ở đâu</p>
+          <h2 className="section-title mb-10">Văn phòng của chúng tôi</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {offices.map(o => (
               <div key={o.city} className="bg-white p-6 border-l-4 border-primary hover:shadow-md transition-shadow">

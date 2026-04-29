@@ -1,33 +1,32 @@
 import { useState, useEffect } from 'react';
-
 import { API } from '../config.js';
 
 export default function News() {
-  const [news, setNews] = useState([]);
+  const [news,    setNews]    = useState([]);
   const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState('All');
+  const [filter,  setFilter]  = useState('Tất cả');
 
   useEffect(() => {
     fetch(`${API}/news`).then(r => r.json()).then(data => { setNews(data); setLoading(false); }).catch(() => setLoading(false));
   }, []);
 
-  const divisions = ['All', 'Building', 'Development'];
-  const filtered = filter === 'All' ? news : news.filter(n => n.division === filter);
-  const formatDate = d => new Date(d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  const divisions = ['Tất cả', 'Building', 'Development'];
+  const filtered  = filter === 'Tất cả' ? news : news.filter(n => n.division === filter);
+  const formatDate = d => new Date(d).toLocaleDateString('vi-VN', { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
     <main className="pt-14 lg:pt-24">
       {/* Hero */}
       <section className="relative h-52 md:h-64 flex items-end pb-8 md:pb-10">
-        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&q=80" alt="News" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1600&q=80" alt="Tin tức" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-dark/70" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
-          <p className="section-label text-white/70">Latest Updates</p>
-          <h1 className="font-heading font-bold text-2xl sm:text-5xl md:text-6xl">News & Press</h1>
+          <p className="section-label text-white/70">Cập nhật mới nhất</p>
+          <h1 className="font-heading font-bold text-2xl sm:text-5xl md:text-6xl">Tin tức & Báo chí</h1>
         </div>
       </section>
 
-      {/* Filter */}
+      {/* Bộ lọc */}
       <section className="bg-dark py-4 sticky top-14 lg:top-[72px] z-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex gap-3">
           {divisions.map(d => (
@@ -39,11 +38,13 @@ export default function News() {
         </div>
       </section>
 
-      {/* Articles */}
+      {/* Bài viết */}
       <section className="py-16 bg-light-gray min-h-screen">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           {loading ? (
-            <div className="text-center py-20 text-mid-gray font-heading">Loading news...</div>
+            <div className="text-center py-20 text-mid-gray font-heading">Đang tải...</div>
+          ) : filtered.length === 0 ? (
+            <div className="text-center py-20 text-mid-gray font-heading">Không có bài viết nào.</div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map(n => (

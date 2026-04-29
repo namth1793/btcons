@@ -1,30 +1,30 @@
 import { Link } from 'react-router-dom';
 
 const services = [
-  { title: 'Acquisitions', desc: 'Strategic site identification, due diligence, and transaction execution to build a high-quality development pipeline.' },
-  { title: 'Development', desc: 'Full-cycle project development from entitlement and design through construction management and delivery.' },
-  { title: 'Finance & Advisory', desc: 'Capital structuring, equity syndication, debt placement, and financial modeling for complex real estate transactions.' },
-  { title: 'Property Management', desc: 'Professional asset and property management services that protect and grow the long-term value of real estate investments.' },
-  { title: 'Public-Private Partnerships', desc: 'Proven P3 expertise for government, housing authorities, and institutions seeking private development capacity.' },
-  { title: 'Strategic Planning', desc: 'Market research, feasibility analysis, and master planning to align development strategy with owner goals.' },
+  { title: 'Mua lại',                desc: 'Xác định địa điểm chiến lược, thẩm định và thực hiện giao dịch để xây dựng hệ thống dự án phát triển chất lượng cao.' },
+  { title: 'Phát triển',             desc: 'Phát triển dự án toàn chu kỳ từ cấp phép và thiết kế đến quản lý thi công và bàn giao.' },
+  { title: 'Tài chính & Tư vấn',     desc: 'Cơ cấu vốn, huy động cổ phần, thu xếp nợ và mô hình tài chính cho các giao dịch bất động sản phức tạp.' },
+  { title: 'Quản lý tài sản',        desc: 'Dịch vụ quản lý tài sản và bất động sản chuyên nghiệp nhằm bảo vệ và gia tăng giá trị đầu tư dài hạn.' },
+  { title: 'Đối tác công tư (PPP)',   desc: 'Chuyên môn PPP đã được kiểm chứng cho các cơ quan chính phủ, quản lý nhà ở và tổ chức tìm kiếm năng lực phát triển tư nhân.' },
+  { title: 'Lập kế hoạch chiến lược',desc: 'Nghiên cứu thị trường, phân tích khả thi và quy hoạch tổng thể để định hướng chiến lược phát triển phù hợp với mục tiêu chủ đầu tư.' },
 ];
 
 const markets = [
-  { name: 'Multifamily', icon: '🏢', desc: 'Market-rate apartment communities in high-demand urban and suburban markets.' },
-  { name: 'Student Housing', icon: '🎓', desc: 'Purpose-built student housing for universities and colleges nationwide.' },
-  { name: 'Affordable Housing', icon: '🏠', desc: 'LIHTC, mixed-income, and workforce housing serving underserved communities.' },
-  { name: 'Mixed-Use', icon: '🏙️', desc: 'Dynamic urban developments combining residential, retail, office, and public space.' },
-  { name: 'Commercial', icon: '🏬', desc: 'Office, retail, and mixed-use developments anchored by strong market fundamentals.' },
-  { name: 'Healthcare', icon: '🏥', desc: 'Medical office buildings, senior living, and healthcare-anchored developments.' },
-  { name: 'Government', icon: '🏛️', desc: 'Federal, state, and local government facilities delivered via P3 and ground lease structures.' },
-  { name: 'Single Family', icon: '🏡', desc: 'For-sale and build-to-rent single family residential communities.' },
+  { name: 'Chung cư',          icon: '🏢', desc: 'Cộng đồng chung cư thị trường tại các đô thị và ngoại ô có nhu cầu cao.' },
+  { name: 'Nhà ở sinh viên',   icon: '🎓', desc: 'Nhà ở sinh viên chuyên dụng cho các trường đại học và cao đẳng.' },
+  { name: 'Nhà ở giá rẻ',      icon: '🏠', desc: 'LIHTC, nhà ở hỗn hợp thu nhập phục vụ các cộng đồng có nhu cầu.' },
+  { name: 'Đa chức năng',      icon: '🏙️', desc: 'Phát triển đô thị năng động kết hợp nhà ở, bán lẻ, văn phòng và không gian công cộng.' },
+  { name: 'Thương mại',        icon: '🏬', desc: 'Văn phòng, bán lẻ và phát triển đa chức năng với nền tảng thị trường vững chắc.' },
+  { name: 'Y tế',              icon: '🏥', desc: 'Tòa nhà văn phòng y tế, nhà dưỡng lão và phát triển neo bởi y tế.' },
+  { name: 'Chính phủ',         icon: '🏛️', desc: 'Công trình chính phủ liên bang, tiểu bang và địa phương qua cơ cấu PPP và cho thuê đất.' },
+  { name: 'Nhà ở đơn lẻ',     icon: '🏡', desc: 'Cộng đồng nhà ở đơn lẻ để bán và xây-để-cho-thuê.' },
 ];
 
 const stats = [
-  { value: '50,000+', label: 'Residential Units Developed' },
-  { value: '$3B+', label: 'Development Pipeline' },
-  { value: '30+', label: 'Years of Development Experience' },
-  { value: '25+', label: 'States Active' },
+  { value: '50.000+', label: 'Căn hộ đã phát triển' },
+  { value: '3 tỷ+',   label: 'Pipeline phát triển' },
+  { value: '30+',     label: 'Năm kinh nghiệm phát triển' },
+  { value: '25+',     label: 'Tỉnh thành đang triển khai' },
 ];
 
 export default function Development() {
@@ -32,35 +32,35 @@ export default function Development() {
     <main className="pt-14 lg:pt-24">
       {/* Hero */}
       <section className="relative h-[55vh] md:h-[60vh] flex items-end pb-10 md:pb-16">
-        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&q=80" alt="Development" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&q=80" alt="Phát triển" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/10" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
-          <p className="section-label text-primary">BTCONS Development</p>
-          <h1 className="font-heading font-bold text-3xl sm:text-5xl md:text-7xl leading-tight">Development</h1>
+          <p className="section-label text-primary">BTCONS Phát triển</p>
+          <h1 className="font-heading font-bold text-3xl sm:text-5xl md:text-7xl leading-tight">Phát triển</h1>
         </div>
       </section>
 
-      {/* Intro */}
+      {/* Giới thiệu */}
       <section className="py-12 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="img-zoom rounded overflow-hidden aspect-[4/3]">
-            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Development" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Phát triển" className="w-full h-full object-cover" />
           </div>
           <div>
-            <p className="section-label">Our Approach</p>
-            <h2 className="section-title mb-6">Creating Communities That Last</h2>
+            <p className="section-label">Phương pháp của chúng tôi</p>
+            <h2 className="section-title mb-6">Tạo dựng cộng đồng bền vững</h2>
             <p className="text-mid-gray leading-relaxed mb-4">
-              BTCONS Development is a vertically integrated real estate developer with a proven track record across multifamily, student housing, affordable housing, and mixed-use projects nationwide.
+              BTCONS Phát triển là nhà phát triển bất động sản tích hợp dọc với thành tích đã được kiểm chứng trong lĩnh vực chung cư, nhà ở sinh viên, nhà ở giá rẻ và dự án đa chức năng trên cả nước.
             </p>
             <p className="text-mid-gray leading-relaxed mb-8">
-              We bring together acquisitions, finance, construction, and management expertise under one roof — delivering exceptional communities that serve residents, support neighborhoods, and generate enduring value for our partners.
+              Chúng tôi kết hợp chuyên môn mua lại, tài chính, thi công và quản lý dưới một mái nhà — tạo ra những cộng đồng xuất sắc phục vụ cư dân, hỗ trợ khu dân cư và tạo giá trị bền vững cho đối tác.
             </p>
-            <Link to="/projects?division=development" className="btn-primary">View Development Projects</Link>
+            <Link to="/projects?division=development" className="btn-primary">Xem dự án phát triển</Link>
           </div>
         </div>
       </section>
 
-      {/* Stats */}
+      {/* Thống kê */}
       <section className="bg-primary py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white text-center">
@@ -74,11 +74,11 @@ export default function Development() {
         </div>
       </section>
 
-      {/* Services */}
+      {/* Dịch vụ */}
       <section className="py-20 bg-light-gray">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <p className="section-label">What We Do</p>
-          <h2 className="section-title mb-12">Development Services</h2>
+          <p className="section-label">Chúng tôi làm gì</p>
+          <h2 className="section-title mb-12">Dịch vụ phát triển</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map(s => (
               <div key={s.title} className="bg-white p-7 border-l-4 border-transparent hover:border-primary transition-all duration-200 group">
@@ -90,11 +90,11 @@ export default function Development() {
         </div>
       </section>
 
-      {/* Markets */}
+      {/* Lĩnh vực */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <p className="section-label">Where We Develop</p>
-          <h2 className="section-title mb-12">Development Markets</h2>
+          <p className="section-label">Chúng tôi phát triển ở đâu</p>
+          <h2 className="section-title mb-12">Lĩnh vực phát triển</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {markets.map(m => (
               <div key={m.name} className="p-5 border border-gray-200 hover:border-primary hover:shadow-md transition-all cursor-pointer group">
@@ -107,13 +107,13 @@ export default function Development() {
         </div>
       </section>
 
-      {/* Process */}
+      {/* Quy trình */}
       <section className="py-20 bg-dark text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <p className="section-label text-primary">How We Work</p>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-12">Our Development Process</h2>
+          <p className="section-label text-primary">Cách chúng tôi làm việc</p>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-12">Quy trình phát triển</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-0">
-            {['Site Acquisition', 'Entitlement & Design', 'Financing & Closing', 'Construction', 'Operations & Management'].map((step, i) => (
+            {['Mua lại địa điểm', 'Cấp phép & Thiết kế', 'Tài chính & Ký kết', 'Thi công', 'Vận hành & Quản lý'].map((step, i) => (
               <div key={step} className="relative flex flex-col items-center text-center p-5 md:p-6">
                 <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center font-heading font-bold text-lg text-white mb-4 z-10 shrink-0">{i + 1}</div>
                 {i < 4 && <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-primary/30" />}
@@ -127,9 +127,9 @@ export default function Development() {
       {/* CTA */}
       <section className="bg-light-gray py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center">
-          <h2 className="section-title mb-4">Have a Development Opportunity?</h2>
-          <p className="text-mid-gray text-lg mb-8 max-w-xl mx-auto">We partner with landowners, municipalities, institutions, and investors to unlock the full potential of real estate assets.</p>
-          <Link to="/contact" className="btn-primary">Talk to Our Team</Link>
+          <h2 className="section-title mb-4">Có cơ hội phát triển?</h2>
+          <p className="text-mid-gray text-lg mb-8 max-w-xl mx-auto">Chúng tôi hợp tác với chủ đất, cơ quan nhà nước, tổ chức và nhà đầu tư để khai thác toàn bộ tiềm năng tài sản bất động sản.</p>
+          <Link to="/contact" className="btn-primary">Liên hệ với đội ngũ của chúng tôi</Link>
         </div>
       </section>
     </main>

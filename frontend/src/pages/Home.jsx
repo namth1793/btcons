@@ -18,14 +18,14 @@ function HeroSection({ hero }) {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/building"
             className="flex items-center gap-3 bg-primary hover:bg-primary-dark text-white font-heading font-bold text-sm uppercase tracking-widest px-8 py-4 transition-colors duration-200 group">
-            Building Company
+            Mảng Xây dựng
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
             </svg>
           </Link>
           <Link to="/development"
             className="flex items-center gap-3 bg-primary hover:bg-primary-dark text-white font-heading font-bold text-sm uppercase tracking-widest px-8 py-4 transition-colors duration-200 group">
-            Development Company
+            Mảng Phát triển
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
             </svg>
@@ -93,8 +93,8 @@ function ProjectsCarousel({ projects }) {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex items-end justify-between mb-10">
           <div>
-            <p className="section-label">Portfolio</p>
-            <h2 className="section-title">Featured Projects</h2>
+            <p className="section-label">Danh mục</p>
+            <h2 className="section-title">Dự án nổi bật</h2>
           </div>
           <div className="flex items-center gap-2">
             <button onClick={prev} disabled={idx === 0}
@@ -105,7 +105,7 @@ function ProjectsCarousel({ projects }) {
               className="w-10 h-10 flex items-center justify-center border border-dark text-dark hover:bg-dark hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-colors">
               →
             </button>
-            <Link to="/projects" className="ml-4 text-primary font-heading font-semibold text-sm hover:underline uppercase tracking-wider">View All</Link>
+            <Link to="/projects" className="ml-4 text-primary font-heading font-semibold text-sm hover:underline uppercase tracking-wider">Xem tất cả</Link>
           </div>
         </div>
 
@@ -119,7 +119,7 @@ function ProjectsCarousel({ projects }) {
                 <div className="relative overflow-hidden aspect-[4/3]">
                   <img src={p.image_url} alt={p.title} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/40 transition-all duration-300 flex items-end p-0 group-hover:p-5">
-                    <span className="text-white font-heading font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">View Project →</span>
+                    <span className="text-white font-heading font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">Xem dự án →</span>
                   </div>
                 </div>
                 <div className="pt-4">
@@ -139,17 +139,17 @@ function ProjectsCarousel({ projects }) {
 function AboutBanner() {
   return (
     <section className="relative py-28 overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80" alt="About" className="absolute inset-0 w-full h-full object-cover" />
+      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80" alt="Về chúng tôi" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-dark/75" />
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-white">
-        <p className="section-label text-white/70">Who We Are</p>
+        <p className="section-label text-white/70">Chúng tôi là ai</p>
         <h2 className="font-heading font-bold text-2xl sm:text-4xl md:text-6xl max-w-3xl leading-tight mb-6">
-          Innovative. Solutions-Driven. Community-Focused.
+          Sáng tạo. Hiệu quả. Hướng đến cộng đồng.
         </h2>
         <p className="text-white/70 text-lg max-w-2xl mb-10 leading-relaxed">
-          For more than 150 years, BTCONS has been one of the largest privately held, family-owned construction and real estate companies in the world — building communities and transforming lives through exceptional project delivery.
+          Hơn 150 năm qua, BTCONS là một trong những công ty xây dựng và bất động sản tư nhân, thuộc sở hữu gia đình lớn nhất thế giới — xây dựng cộng đồng và thay đổi cuộc sống qua từng dự án xuất sắc.
         </p>
-        <Link to="/about" className="btn-outline">Our Story</Link>
+        <Link to="/about" className="btn-outline">Câu chuyện của chúng tôi</Link>
       </div>
     </section>
   );
@@ -157,16 +157,16 @@ function AboutBanner() {
 
 /* ─── News Section ─── */
 function NewsSection({ news }) {
-  const formatDate = d => new Date(d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  const formatDate = d => new Date(d).toLocaleDateString('vi-VN', { day: 'numeric', month: 'long', year: 'numeric' });
   return (
     <section className="py-20 bg-light-gray">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex items-end justify-between mb-10">
           <div>
-            <p className="section-label">Latest</p>
-            <h2 className="section-title">News & Press</h2>
+            <p className="section-label">Mới nhất</p>
+            <h2 className="section-title">Tin tức & Báo chí</h2>
           </div>
-          <Link to="/news" className="text-primary font-heading font-semibold text-sm hover:underline uppercase tracking-wider">View All News</Link>
+          <Link to="/news" className="text-primary font-heading font-semibold text-sm hover:underline uppercase tracking-wider">Xem tất cả tin tức</Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {news.map(n => (
@@ -196,12 +196,12 @@ function CareersCTA() {
   return (
     <section className="bg-primary py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 text-center text-white">
-        <p className="font-heading text-sm uppercase tracking-widest text-white/70 mb-3">Join Our Team</p>
-        <h2 className="font-heading font-bold text-2xl sm:text-4xl md:text-5xl mb-4">Build Your Career With BTCONS</h2>
+        <p className="font-heading text-sm uppercase tracking-widest text-white/70 mb-3">Gia nhập đội ngũ</p>
+        <h2 className="font-heading font-bold text-2xl sm:text-4xl md:text-5xl mb-4">Xây dựng sự nghiệp cùng BTCONS</h2>
         <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-          We are always looking for talented, driven people who are passionate about construction, development, and making a lasting impact in the communities where we work.
+          Chúng tôi luôn tìm kiếm những người tài năng, nhiệt huyết với xây dựng, phát triển và mong muốn tạo ra tác động bền vững cho các cộng đồng nơi chúng tôi làm việc.
         </p>
-        <Link to="/careers" className="btn-outline">Explore Careers</Link>
+        <Link to="/careers" className="btn-outline">Khám phá cơ hội nghề nghiệp</Link>
       </div>
     </section>
   );
@@ -214,8 +214,8 @@ function ReportsCTA() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { title: '2024 Annual Report', sub: 'Our year in review — achievements, financials, and impact.', icon: '📄' },
-            { title: '2024 Impact Report', sub: 'How we\'re driving sustainability, equity, and community benefit.', icon: '🌿' },
+            { title: 'Báo cáo thường niên 2024', sub: 'Tổng kết năm — thành tựu, tài chính và tác động xã hội.', icon: '📄' },
+            { title: 'Báo cáo tác động 2024',   sub: 'Cách chúng tôi thúc đẩy bền vững, công bằng và lợi ích cộng đồng.', icon: '🌿' },
           ].map(r => (
             <div key={r.title} className="border border-white/15 p-8 flex items-center gap-6 hover:border-primary transition-colors group cursor-pointer">
               <div className="text-4xl">{r.icon}</div>

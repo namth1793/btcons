@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const buildingDropdown = [
-  { label: 'Services', items: ['Construction Management', 'Design-Build', 'Integrated Project Delivery', 'Virtual Design & Construction', 'Sustainability Strategies', 'Facilities Management'] },
-  { label: 'Markets', items: ['Healthcare', 'Higher Education', 'K-12 Education', 'Life Sciences', 'Data Centers', 'Sports & Entertainment', 'Transportation', 'Federal'] },
+  { label: 'Dịch vụ', items: ['Quản lý xây dựng', 'Thiết kế & Thi công', 'Giao dự án tích hợp', 'Thiết kế & Thi công ảo', 'Chiến lược bền vững', 'Quản lý cơ sở vật chất'] },
+  { label: 'Lĩnh vực', items: ['Y tế', 'Đại học', 'Giáo dục phổ thông', 'Khoa học sự sống', 'Trung tâm dữ liệu', 'Thể thao & Giải trí', 'Giao thông vận tải', 'Chính phủ'] },
 ];
 
 const developmentDropdown = [
-  { label: 'Services', items: ['Acquisitions', 'Development', 'Finance & Advisory', 'Management', 'Strategic Planning', 'Public-Private Partnerships'] },
-  { label: 'Markets', items: ['Multifamily', 'Student Housing', 'Affordable Housing', 'Mixed-Use', 'Commercial', 'Healthcare', 'Government'] },
+  { label: 'Dịch vụ', items: ['Mua lại', 'Phát triển', 'Tài chính & Tư vấn', 'Quản lý tài sản', 'Lập kế hoạch chiến lược', 'Đối tác công tư (PPP)'] },
+  { label: 'Lĩnh vực', items: ['Chung cư', 'Nhà ở sinh viên', 'Nhà ở giá rẻ', 'Đa chức năng', 'Thương mại', 'Y tế', 'Chính phủ'] },
 ];
 
 export default function Navbar() {
@@ -30,28 +30,26 @@ export default function Navbar() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
-      {/* Top utility bar */}
+      {/* Thanh tiện ích */}
       <div className="hidden lg:flex items-center justify-end px-8 py-1 border-b border-black/10">
         <div className="flex items-center gap-6 text-xs text-black/60 font-sans">
-          <Link to="/news" className="transition-colors">News</Link>
-          <Link to="/contact" className="transition-colors">Contact</Link>
-          <a href="#" className="transition-colors">Locations</a>
+          <Link to="/news" className="transition-colors">Tin tức</Link>
+          <Link to="/contact" className="transition-colors">Liên hệ</Link>
+          <a href="#" className="transition-colors">Văn phòng</a>
         </div>
       </div>
 
-      {/* Main nav */}
+      {/* Nav chính */}
       <nav className="flex items-center justify-between px-6 lg:px-10">
-        {/* Logo */}
         <Link to="/" className="flex items-center shrink-0">
           <img src="/logo.png" alt="BTCONS" className="h-14 lg:h-20 w-auto object-contain rounded" />
         </Link>
 
-        {/* Desktop links */}
         <ul className="hidden lg:flex items-center gap-1">
-          {/* Building */}
+          {/* Xây dựng */}
           <li className="nav-item relative group">
             <Link to="/building" className="flex items-center gap-1 px-4 py-2 text-black/90 font-heading font-semibold text-sm uppercase tracking-wider transition-colors">
-              Building
+              Xây dựng
               <svg className="w-3 h-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
             </Link>
             <div className="nav-dropdown absolute top-full left-0 w-[520px] bg-dark border-t-4 border-primary shadow-2xl p-6 grid grid-cols-2 gap-6">
@@ -66,15 +64,15 @@ export default function Navbar() {
                 </div>
               ))}
               <div className="col-span-2 pt-3 border-t border-white/10">
-                <Link to="/building" className="text-primary text-sm font-heading font-semibold hover:underline">View All Building Services →</Link>
+                <Link to="/building" className="text-primary text-sm font-heading font-semibold hover:underline">Xem tất cả dịch vụ xây dựng →</Link>
               </div>
             </div>
           </li>
 
-          {/* Development */}
+          {/* Phát triển */}
           <li className="nav-item relative group">
             <Link to="/development" className="flex items-center gap-1 px-4 py-2 text-black/90 font-heading font-semibold text-sm uppercase tracking-wider transition-colors">
-              Development
+              Phát triển
               <svg className="w-3 h-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
             </Link>
             <div className="nav-dropdown absolute top-full left-0 w-[520px] bg-dark border-t-4 border-primary shadow-2xl p-6 grid grid-cols-2 gap-6">
@@ -89,12 +87,12 @@ export default function Navbar() {
                 </div>
               ))}
               <div className="col-span-2 pt-3 border-t border-white/10">
-                <Link to="/development" className="text-primary text-sm font-heading font-semibold hover:underline">View All Development Services →</Link>
+                <Link to="/development" className="text-primary text-sm font-heading font-semibold hover:underline">Xem tất cả dịch vụ phát triển →</Link>
               </div>
             </div>
           </li>
 
-          {[{ label: 'Projects', to: '/projects' }, { label: 'About', to: '/about' }, { label: 'Careers', to: '/careers' }].map(link => (
+          {[{ label: 'Dự án', to: '/projects' }, { label: 'Giới thiệu', to: '/about' }, { label: 'Tuyển dụng', to: '/careers' }].map(link => (
             <li key={link.label}>
               <Link to={link.to} className="px-4 py-2 text-black/90 font-heading font-semibold text-sm uppercase tracking-wider transition-colors block">
                 {link.label}
@@ -103,7 +101,7 @@ export default function Navbar() {
           ))}
 
           <li className="ml-3">
-            <Link to="/contact" className="btn-primary text-xs py-2.5 px-5">Partner With Us</Link>
+            <Link to="/contact" className="btn-primary text-xs py-2.5 px-5">Hợp tác với chúng tôi</Link>
           </li>
         </ul>
 
@@ -119,13 +117,13 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden bg-dark border-t border-black/10 pb-6">
           {[
-            { label: 'Building', to: '/building', key: 'building' },
-            { label: 'Development', to: '/development', key: 'development' },
-            { label: 'Projects', to: '/projects', key: null },
-            { label: 'About', to: '/about', key: null },
-            { label: 'Careers', to: '/careers', key: null },
-            { label: 'News', to: '/news', key: null },
-            { label: 'Contact', to: '/contact', key: null },
+            { label: 'Xây dựng',      to: '/building' },
+            { label: 'Phát triển',    to: '/development' },
+            { label: 'Dự án',         to: '/projects' },
+            { label: 'Giới thiệu',    to: '/about' },
+            { label: 'Tuyển dụng',    to: '/careers' },
+            { label: 'Tin tức',       to: '/news' },
+            { label: 'Liên hệ',       to: '/contact' },
           ].map(item => (
             <div key={item.label}>
               <Link to={item.to} className="block px-6 py-3 text-white font-heading font-semibold text-sm uppercase tracking-wider border-b border-white/5 hover:text-primary transition-colors">
@@ -134,7 +132,7 @@ export default function Navbar() {
             </div>
           ))}
           <div className="px-6 pt-4">
-            <Link to="/contact" className="btn-primary block text-center">Partner With Us</Link>
+            <Link to="/contact" className="btn-primary block text-center">Hợp tác với chúng tôi</Link>
           </div>
         </div>
       )}

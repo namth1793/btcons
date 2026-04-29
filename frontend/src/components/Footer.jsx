@@ -3,32 +3,32 @@ import { Link } from 'react-router-dom';
 
 const cols = [
   {
-    heading: 'Building',
+    heading: 'Xây dựng',
     links: [
-      { label: 'Our Approach', to: '/building' },
-      { label: 'Services', to: '/building' },
-      { label: 'Markets', to: '/building' },
-      { label: 'Locations', to: '/building' },
-      { label: 'Leadership', to: '/about' },
+      { label: 'Phương pháp',   to: '/building' },
+      { label: 'Dịch vụ',      to: '/building' },
+      { label: 'Lĩnh vực',     to: '/building' },
+      { label: 'Văn phòng',    to: '/building' },
+      { label: 'Ban lãnh đạo', to: '/about' },
     ]
   },
   {
-    heading: 'Development',
+    heading: 'Phát triển',
     links: [
-      { label: 'Services', to: '/development' },
-      { label: 'Markets', to: '/development' },
-      { label: 'Locations', to: '/development' },
-      { label: 'Leadership', to: '/about' },
+      { label: 'Dịch vụ',      to: '/development' },
+      { label: 'Lĩnh vực',     to: '/development' },
+      { label: 'Văn phòng',    to: '/development' },
+      { label: 'Ban lãnh đạo', to: '/about' },
     ]
   },
   {
-    heading: 'Company',
+    heading: 'Công ty',
     links: [
-      { label: 'About BTCONS', to: '/about' },
-      { label: 'Projects', to: '/projects' },
-      { label: 'News', to: '/news' },
-      { label: 'Careers', to: '/careers' },
-      { label: 'Partner With Us', to: '/contact' },
+      { label: 'Về BTCONS',         to: '/about' },
+      { label: 'Dự án',             to: '/projects' },
+      { label: 'Tin tức',           to: '/news' },
+      { label: 'Tuyển dụng',        to: '/careers' },
+      { label: 'Hợp tác với chúng tôi', to: '/contact' },
     ]
   },
 ];
@@ -58,10 +58,10 @@ export default function Footer() {
               <img src="/logo_foot.png" alt="BTCONS" className="h-16 w-auto object-contain" />
             </Link>
             <p className="text-white text-sm leading-relaxed mb-6">
-              A leading global builder and real estate developer — innovative, solutions-driven, and community-focused for over 150 years.
+              Nhà thầu xây dựng & phát triển bất động sản hàng đầu — sáng tạo, hiệu quả và hướng đến cộng đồng trong suốt hơn 150 năm.
             </p>
             <div className="mb-4">
-              <p className="text-white text-xs uppercase tracking-widest mb-2 font-heading">Building</p>
+              <p className="text-white text-xs uppercase tracking-widest mb-2 font-heading">Xây dựng</p>
               <div className="flex gap-2">
                 {socialBuilding.map(s => (
                   <a key={s.name} href={s.href} title={s.name}
@@ -72,7 +72,7 @@ export default function Footer() {
               </div>
             </div>
             <div>
-              <p className="text-white text-xs uppercase tracking-widest mb-2 font-heading">Development</p>
+              <p className="text-white text-xs uppercase tracking-widest mb-2 font-heading">Phát triển</p>
               <div className="flex gap-2">
                 {socialDev.map(s => (
                   <a key={s.name} href={s.href} title={s.name}
@@ -103,9 +103,9 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-white text-xs">© {new Date().getFullYear()} BTCONS, Inc. All Rights Reserved.</p>
+          <p className="text-white text-xs">© {new Date().getFullYear()} BTCONS, Inc. Bảo lưu mọi quyền.</p>
           <div className="flex items-center gap-6">
-            {['Privacy Policy', 'Terms of Use', 'Site Map'].map(item => (
+            {['Chính sách bảo mật', 'Điều khoản sử dụng', 'Sơ đồ trang'].map(item => (
               <a key={item} href="#" className="text-white hover:text-white/70 text-xs transition-colors">{item}</a>
             ))}
             <Link to="/admin/login" className="text-white/30 hover:text-white/60 text-xs transition-colors">admin</Link>
