@@ -3,7 +3,8 @@ const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs');
 
-const dataDir = path.join(__dirname, '..', 'data');
+// DATA_DIR=/data khi dùng Railway Volume, mặc định dùng thư mục local
+const dataDir = process.env.DATA_DIR || path.join(__dirname, '..', 'data');
 if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
 const db = new Database(path.join(dataDir, 'btcons.db'));
@@ -22,6 +23,38 @@ const DEFAULT_CONTENT = {
   about: JSON.stringify({
     title: 'About BTCONS',
     body: 'A leading global builder and real estate developer — innovative, solutions-driven, and community-focused for over 150 years.',
+  }),
+  navbar: JSON.stringify({
+    links: {
+      building: 'Xây dựng',
+      development: 'Phát triển',
+      projects: 'Dự án',
+      about: 'Giới thiệu',
+      careers: 'Tuyển dụng',
+      news: 'Tin tức',
+      contact: 'Liên hệ',
+      cta: 'Hợp tác với chúng tôi',
+    },
+    buildingViewAll: 'Xem tất cả dịch vụ xây dựng →',
+    developmentViewAll: 'Xem tất cả dịch vụ phát triển →',
+    buildingDropdown: [
+      { label: 'Dịch vụ', items: ['Quản lý xây dựng', 'Thiết kế & Thi công', 'Giao dự án tích hợp', 'Thiết kế & Thi công ảo', 'Chiến lược bền vững', 'Quản lý cơ sở vật chất'] },
+      { label: 'Lĩnh vực', items: ['Y tế', 'Đại học', 'Giáo dục phổ thông', 'Khoa học sự sống', 'Trung tâm dữ liệu', 'Thể thao & Giải trí', 'Giao thông vận tải', 'Chính phủ'] },
+    ],
+    developmentDropdown: [
+      { label: 'Dịch vụ', items: ['Mua lại', 'Phát triển', 'Tài chính & Tư vấn', 'Quản lý tài sản', 'Lập kế hoạch chiến lược', 'Đối tác công tư (PPP)'] },
+      { label: 'Lĩnh vực', items: ['Chung cư', 'Nhà ở sinh viên', 'Nhà ở giá rẻ', 'Đa chức năng', 'Thương mại', 'Y tế', 'Chính phủ'] },
+    ],
+  }),
+  seo: JSON.stringify({
+    home:        { title: 'BTCONS - Global Builder & Real Estate Developer', description: 'BTCONS là nhà thầu xây dựng và phát triển bất động sản hàng đầu toàn cầu với hơn 150 năm kinh nghiệm.', keywords: 'xây dựng, bất động sản, BTCONS, nhà thầu, contractor' },
+    building:    { title: 'Xây dựng - BTCONS', description: 'Dịch vụ xây dựng chuyên nghiệp: quản lý xây dựng, thiết kế & thi công, giải pháp bền vững.', keywords: 'xây dựng, quản lý xây dựng, thiết kế thi công' },
+    development: { title: 'Phát triển - BTCONS', description: 'Dịch vụ phát triển bất động sản: mua lại, tài chính, quản lý tài sản, đối tác công tư.', keywords: 'bất động sản, phát triển, đầu tư' },
+    projects:    { title: 'Dự án - BTCONS', description: 'Danh mục các dự án tiêu biểu của BTCONS.', keywords: 'dự án xây dựng, công trình, portfolio' },
+    about:       { title: 'Giới thiệu - BTCONS', description: 'Tìm hiểu về lịch sử, sứ mệnh và đội ngũ của BTCONS.', keywords: 'về chúng tôi, BTCONS, lịch sử' },
+    careers:     { title: 'Tuyển dụng - BTCONS', description: 'Cơ hội nghề nghiệp và việc làm tại BTCONS.', keywords: 'tuyển dụng, việc làm, career' },
+    news:        { title: 'Tin tức - BTCONS', description: 'Tin tức, thông báo và cập nhật mới nhất từ BTCONS.', keywords: 'tin tức, thông báo, press release' },
+    contact:     { title: 'Liên hệ - BTCONS', description: 'Liên hệ với BTCONS để được tư vấn về xây dựng và bất động sản.', keywords: 'liên hệ, contact, địa chỉ' },
   }),
 };
 

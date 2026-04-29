@@ -19,6 +19,7 @@ import ProjectsAdmin  from './pages/admin/ProjectsAdmin';
 import NewsAdmin      from './pages/admin/NewsAdmin';
 import JobsAdmin      from './pages/admin/JobsAdmin';
 import ContactsAdmin  from './pages/admin/ContactsAdmin';
+import SeoAdmin       from './pages/admin/SeoAdmin';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -58,6 +59,7 @@ export default function App() {
         <Route path="/admin/news"     element={<NewsAdmin />} />
         <Route path="/admin/jobs"     element={<JobsAdmin />} />
         <Route path="/admin/contacts" element={<ContactsAdmin />} />
+        <Route path="/admin/seo"      element={<SeoAdmin />} />
       </Routes>
     </BrowserRouter>
   );
